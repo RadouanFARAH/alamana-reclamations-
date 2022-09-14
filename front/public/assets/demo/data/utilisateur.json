@@ -1,0 +1,18 @@
+{
+    "data": [{
+            "id": "1",
+            "cn": "user1",
+            "displayName": "user1",
+            "sAMAccountName": "gs0001",
+            "description": "gestionnaire",
+            "agence_siege": "true",
+            "code_agence":"op",
+            "code_gest":"d1a",
+            "ldapUpn": "n@g.com",
+            "date_inscription": "01-01-2022"   ,
+            "agenceOuSiege":"agence"        
+        }
+       
+
+    ]
+}

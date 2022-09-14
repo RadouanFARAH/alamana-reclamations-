@@ -1,0 +1,177 @@
+{
+    "data": [{
+            "id": "1",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        },
+        {
+            "id": "2",
+            "utilisateur": "nom2",
+            "type": "Réclamation liée au remboursement /impayé",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "3",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "4",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "5",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "6",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "7",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        },
+        {
+            "id": "8",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        },
+        {
+            "id": "9",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        },
+        {
+            "id": "10",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        },
+        {
+            "id": "11",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        },
+        {
+            "id": "12",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "13",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+
+        },
+        {
+            "id": "14",
+            "utilisateur": "nom1",
+            "type": "Rejet du dossier de prêt",
+            "communication": "Courrier électronique",
+            "traitement": "Au niveau local",
+            "delai": "2 jours",
+            "reponse": "hello",
+            "etat": "non traiter",
+            "date_resolution": "2022-04-01"
+
+        }
+    ]
+}

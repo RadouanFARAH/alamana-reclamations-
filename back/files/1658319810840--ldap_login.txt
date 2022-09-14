@@ -1,0 +1,127 @@
+router.post('/login', async (req, res) => {
+    //Validation
+    const {
+        error
+    } = loginValidation(req.body);
+    if (error) {
+        return res.status(400).send({
+            error: error.details[0].message
+        });
+    }
+
+
+    client.bind("uid=admin,ou=system", "secret", (err) => {
+
+        if (err) {
+            console.log("Erreur in new connection" + err)
+        } else {
+            const hash = "{SHA256}" + crypto.createHash('sha256').update(req.body.password).digest('base64');
+
+            const opts = {
+                filter: `(&(sn=${req.body.username})(userPassword=${hash}))`,
+                scope: 'sub',
+                attributes: ['dn', 'sn', 'cn']
+            };
+            client.search('ou=users,ou=system', opts, (error, search) => {
+
+                search.on("searchEntry", function (entry) {
+                    if (entry.object) {
+                        const user = entry.object
+                        const token = jwt.sign({ user }, process.env.TOKEN_SECRET);
+                        return res
+                            .cookie("access_token", token, {
+                                httpOnly: true,
+                            })
+                            .send({ error: false, message: { token, user } })
+                    }
+                });
+                setTimeout(() => {
+                    return res.send({ error: true, message: "error" })
+                }, 2000)
+
+
+
+            });
+        }
+    });
+
+
+    // Token login
+    // const token = jwt.sign({ user }, process.env.TOKEN_SECRET);
+    // return res
+    //     .cookie("access_token", token, {
+    //         httpOnly: true,
+    //     })
+    //     .status(200)
+    //     .json({ message: "Logged in successfully 😊 👌", token: token, nom: user.nom, prenom: user.prenom });
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+    const {sAMAccountName,password} =req.body
+    const values=[sAMAccountName, password]
+
+        if (!sAMAccountName || !password) {
+            return res.send({error:"true" , message:"entrer votre sAMAccountName et password"})
+        } else {
+          
+                config.query("SELECT * FROM mydb.user WHERE sAMAccountName=? AND password=?",values,async (err,result)=>{
+                    if(err){
+                        return res.send(err)
+                    }else{
+                        if(result.length){
+                            return res.send({ error: false, message: result[0] })  
+                        }
+                    }
+                   
+                })
+
+
+
+
+
+router.post('/login', async (request, response) => {
+    const {sAMAccountName,password} =request.body
+    const values=[sAMAccountName, password]
+
+        //verification user existe ou pas
+        const userGet = await "SELECT * FROM user where sAMAccountName=? AND password=?";
+
+        if (!sAMAccountName || !password) {
+            return response.send({error:"true" , message:"entrer votre sAMAccountName et password"})
+        } else { 
+            config.query(userGet,values,  (err, res) => {
+                if (!res[0]) {
+                    return response.send({ error: true, message: "user n'existe pas" })
+                }
+            })
+            
+
+            try {
+                const userGet = await "SELECT * FROM user where id = ?";
+                config.query(userGet, values, (err, result) => {
+                    return response.send({ error: false, message: result })
+                })
+            }
+            catch (error) {
+                console.log(error);
+            }
+    // Token login
+    // const token = jwt.sign({ user }, process.env.TOKEN_SECRET);
+    // return res
+    //     .cookie("access_token", token, {
+    //         httpOnly: true,
+    //     })
+    //     .status(200)
+    //     .json({ message: "Logged in successfully 😊 👌", token: token, nom: user.nom, prenom: user.prenom });
+}})

@@ -1,0 +1,105 @@
+//.......................................................modifier reclamation...................................................................................................................................
+router.put("/:id", verifyToken,upload.single('file'), async (request, response) => {
+  const { id } = request.params;
+  const {
+    nom,
+    prenom,
+    cin,
+    adress,
+    tiers,
+    telephone,
+    type,
+    communication,
+    traitement,
+    client,
+    calification,
+    description,
+    sous_type
+  } = request.body;
+  const file= request.file;
+  const user_id = request.user.id;
+
+  try {
+    const connection = await mysql.createConnection(config);
+    const updateReclamation =
+      "UPDATE reclamation SET nom=?,prenom=?,cin=?,adress=?,tiers=?,telephone=?,type=?,communication=?,traitement=?,client=?,calification=?,description=?,sous_type=?,file=? where id=? AND user_id=? AND etat=?";
+    const [rows, fields] = await connection.execute(updateReclamation, [
+      nom,
+      prenom,
+      cin,
+      adress,
+      tiers,
+      telephone,
+      type,
+      communication,
+      traitement,
+      client,
+      calification,
+      description,
+      sous_type,
+      file,
+      id,
+      user_id,
+      "Non affecter"
+     
+     
+  
+
+    ]);
+
+    return response.send({ error: false, message: "réclamation modifier" });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+front
+
+
+                   if (product.id) {
+                const reclamationService = new ReclamationService();
+                 
+                const formData=new FormData();
+      
+                formData.append('id',product.id)
+                formData.append('nom',product.nom)
+                formData.append('prenom',product.prenom)
+                formData.append('cin',product.cin)
+                formData.append('adress',product.adress)
+                formData.append('tiers',product.tiers)
+                formData.append('telephone',product.telephone)
+                formData.append('type',product.type)
+                formData.append('communication',product.communication)
+                formData.append('traitement',product.traitement)
+                formData.append('etat',product.etat)
+                formData.append('date_reception',product.date_reception)
+                formData.append('user_id',product.user_id)
+                formData.append('client',product.client)
+                formData.append('calification',product.calification)
+                formData.append('description',product.description)
+                formData.append('sous_type',product.sous_type)
+                formData.append('file',product.file)
+
+                reclamationService.putReclamations(formData).then((data) => {
+                    if (!data.error) {
+                        reclamationService.getReclamations().then((data) => setProducts(data?.message));
+                        toast.current.show({ severity: "success", summary: "Succès ", detail: "Réclamation Modifier", life: 3000 });
+                    } else {
+                        toast.current.show({ severity: "error", summary: "Erreur ", detail: "Réclamation non Modifier", life: 3000 });
+                    }
+                });
+            }
